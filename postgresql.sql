@@ -42,22 +42,19 @@ ALTER TABLE InfoTeachers RENAME COLUMN dateofbirth TO dob;
 
 /* Different Types Of Keys In Database – PostgreSQL Tutorial
 
-Candidate Key – A Candidate Key is a combination of a minimal set of attributes which can uniquely identify a tuple. Any
-relation can have more than a single Candidate Key, with the key being a simple or a composite key.
+Candidate Key – A Candidate Key is a combination of a minimal set of attributes which can uniquely identify a tuple. Any relation can have more than a 
+single Candidate Key, with the key being a simple or a composite key.
 
-Super Key – A Super Key is the set of attributes which can uniquely identify a tuple. So, a Candidate Key is a Super Key, but 
-vice-versa isn’t true.
+Super Key – A Super Key is the set of attributes which can uniquely identify a tuple. So, a Candidate Key is a Super Key, but vice-versa isn’t true.
 
-Primary Key – A Primary Key is a set of attributes that can be used to uniquely identify every tuple. So, if there are 3-4 
-candidate keys present in a relationship, then out those, one can be chosen as a Primary Key.
+Primary Key – A Primary Key is a set of attributes that can be used to uniquely identify every tuple. So, if there are 3-4 candidate keys present in a
+relationship, then out those, one can be chosen as a Primary Key.
 
 Alternate Key – All the Candidate Keys other than the Primary Key is called as an Alternate Key.
 
-Foreign Key – An attribute that can only take the values present as the values of some other attribute, is the foreign key to
-the attribute to which it refers.
+Foreign Key – An attribute that can only take the values present as the values of some other attribute, is the foreign key to the attribute to which it refers.
 
-Constraints Used In Database – PostgreSQL Tutorial
-
+Constraints Used In Database – PostgreSQL Tutorial:
 NOT NULL – The NOT NULL constraint ensures that a NULL value cannot be stored in a column
 UNIQUE – The UNIQUE constraint makes sure that all the values in a column are di erent
 CHECK -The CHECK constraint ensures that all the values in a column satisfy a speci c condition.
@@ -76,7 +73,7 @@ SELECT
 
 Apart from these commands, there are also other manipulative operators/functions such as:
 
-Arithmetic, Bitwise, Compound and Comparison Operators
+Arithmetic, Bitwise, Compound and Comparison Operators:
 Logical Operators
 Aggregate Functions
 Special Operators
@@ -288,8 +285,7 @@ UNION
 SELECT  column_name(s )FROM table2;
 
 -- INTERSECT
--- The INTERSECT clause is used to combine two SELECT statements and return the intersection of the data-sets of 
--- both the SELECT statements.
+-- The INTERSECT clause is used to combine two SELECT statements and return the intersection of the data-sets of both the SELECT statements.
 SELECT Column1 , Column2 ....
 FROM  table_name;
 WHERE condition
@@ -299,8 +295,7 @@ FROM  table_name;
 WHERE condition
 
 -- EXCEPT
--- The EXCEPT operator returns those tuples that are returned by the first SELECT operation, and are not returned 
--- by the second SELECT operation.
+-- The EXCEPT operator returns those tuples that are returned by the first SELECT operation, and are not returned by the second SELECT operation.
 SELECT  column_name
 FROM  table_name;
 EXCEPT
@@ -339,18 +334,22 @@ FORWARD ALL
 SELECT * FROM TeachersInfo OFFSET 2 FETCH FIRST 5 ROWS ONLY;
 
 -- Nested Queries – PostgreSQL Tutorial
--- Nested queries are those queries which have an outer query and inner subquery. So, basically, 
--- the subquery is a query which is nested within another query such as SELECT, INSERT, UPDATE or DELETE.
+-- Nested queries are those queries which have an outer query and inner subquery. So, basically,the subquery is a query which is nested within another
+-- query such as SELECT, INSERT, UPDATE or DELETE.
 
 /* Joins – PostgreSQL Tutorial
 JOINS in PostgreSQL are used to combine rows from two or more tables, based on a related column between those tables. 
+
 The following are the types of joins: 
+
 INNER JOIN: The INNER JOIN returns those records which have matching values in both the tables.
-LEFT JOIN: The LEFT JOIN returns records from the left table, and also those records which satisfy the condition 
-from the right table.
-RIGHT JOIN: The RIGHT JOIN returns records from the right table, and also those records which satisfy the condition
-from the left table.
+
+LEFT JOIN: The LEFT JOIN returns records from the left table, and also those records which satisfy the condition from the right table.
+
+RIGHT JOIN: The RIGHT JOIN returns records from the right table, and also those records which satisfy the condition from the left table.
+
 FULL JOIN: The FULL JOIN returns all those records which either have a match in the left or the right table.
+
 */
 
 SELECT Subjects.SubjectID, TeachersInfo.TeacherName
@@ -376,8 +375,7 @@ FULL OUTER JOIN Subjects ON TeachersInfo.TeacherID = Subjects.SubjectID
 ORDER BY TeachersInfo.TeacherName;
 
 -- Views – PostgreSQL Tutorial
--- A view is a single table, which is derived from other tables. So, a view contains rows and columns similar to a 
--- real table and has fields from one or more table.
+--A view is a single table, which is derived from other tables. So, a view contains rows and columns similar to a real table and has fields from one or more table.
 
 -- The ‘CREATE VIEW’ statement
 -- The CREATE VIEW statement is used to create a view from an existing table.
@@ -408,9 +406,8 @@ $$;
 CALL insert_data(4, 5);
 
 -- Triggers – PostgreSQL Tutorial
--- Triggers are a set of  SQL statements which are stored in the database catalog. These statements are executed
--- whenever an event associated with a table occurs. So, a trigger can be invoked either BEFORE or AFTER the data 
--- is changed by INSERT, UPDATE or DELETE statement. 
+--Triggers are a set of  SQL statements which are stored in the database catalog. These statements are executed whenever an event associated with a table occurs.
+--So, a trigger can be invoked either BEFORE or AFTER the data is changed by INSERT, UPDATE or DELETE statement. 
 
 --CREATE TRIGGER
 CREATE TRIGGER example_trigger AFTER INSERT ON TeachersInfo;
